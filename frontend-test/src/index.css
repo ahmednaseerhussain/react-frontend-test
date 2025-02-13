@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+
+/* index.css or app.css */
+body {
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  font-family: Arial, sans-serif; /* Optional: set a default font */
+  background: linear-gradient(to right, rgba(255, 192, 203, 0.362), rgba(73, 220, 250, 0.132), rgba(255, 255, 255, 0.696)); /* Gradient background */
+  min-height: 100vh; /* Ensures the gradient covers full height */
+  background-attachment: fixed; /* Keeps the background fixed on scroll */
+  background-size: cover; /* Ensures it covers the viewport */
+}
