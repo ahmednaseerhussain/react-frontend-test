@@ -15,9 +15,7 @@ function App() {
   const [selectedMeal, setSelectedMeal] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [highlightedMeal, setHighlightedMeal] = useState(null);
-  const [menuOpen, setMenuOpen] = useState(false); // State for hamburger menu
-
-  // Fetch data from the API
+  const [menuOpen, setMenuOpen] = useState(false); 
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
@@ -31,16 +29,14 @@ function App() {
     fetchRecipes();
   }, []);
 
-  // Add meal to a week
   const handleAddToWeek = (meal, week) => {
     setWeekData((prev) => ({
       ...prev,
       [week]: [...prev[week], meal],
     }));
-    setShowModal(false); // Close modal
+    setShowModal(false); 
   };
 
-  // Remove meal from a week
   const handleDeleteFromWeek = (mealId, week) => {
     setWeekData((prev) => ({
       ...prev,
@@ -48,7 +44,6 @@ function App() {
     }));
   };
 
-  // Render meals based on the current tab
   const renderMeals = () => {
     if (activeTab === "All Meals") {
       return recipes.map((meal) => (
@@ -80,10 +75,8 @@ function App() {
         </h1>
       </MaxWidthWrapper>
 
-      {/* Navigation Tabs */}
       <div className="sticky top-0 z-50 w-full bg-white shadow-md">
         <div className="flex items-center justify-between px-4 sm:px-8 lg:px-16 py-4 sm:py-6">
-          {/* Hamburger Menu */}
           <div className="sm:hidden">
             <button
               className="text-blue-900 focus:outline-none"
@@ -106,7 +99,6 @@ function App() {
             </button>
           </div>
 
-          {/* Tabs for Larger Screens */}
           <div className="hidden sm:flex flex-wrap items-center justify-center sm:justify-start space-x-12">
             <button
               className={`text-sm font-bold pb-2 ${
@@ -133,7 +125,6 @@ function App() {
             ))}
           </div>
 
-          {/* Add to Week Button */}
           <div>
             <button
               className="bg-blue-900 text-white px-6 py-2 rounded hover:bg-blue-800 font-bold text-sm"
@@ -151,7 +142,6 @@ function App() {
           </div>
         </div>
 
-        {/* Dropdown for Hamburger Menu */}
         {menuOpen && (
           <div className="sm:hidden flex flex-col bg-white px-4 py-4 border-t border-gray-200">
             <button
@@ -191,7 +181,6 @@ function App() {
         </div>
       </MaxWidthWrapper>
 
-      {/* Modal for Adding Meal */}
       {showModal && (
         <div className="fixed inset-0 bg-black/30 flex items-center justify-center">
           <div className="bg-white p-6 rounded-lg shadow-lg w-11/12 max-w-md mx-auto">

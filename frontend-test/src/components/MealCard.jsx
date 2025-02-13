@@ -8,7 +8,6 @@ function MealCard({ meal, onCardClick, isSelected, isDeletable, onDelete }) {
         isSelected ? "border-blue-900" : "border-black/10"
       }`}
     >
-      {/* Image Section */}
       <div
         className="relative cursor-pointer rounded-lg overflow-hidden m-6"
         onClick={() => onCardClick(meal)}
@@ -23,17 +22,11 @@ function MealCard({ meal, onCardClick, isSelected, isDeletable, onDelete }) {
         </span>
       </div>
 
-      {/* Content Section */}
       <div className="p-4">
-        {/* Title */}
         <h2 className="text-2xl font-bold mb-2">{meal.name}</h2>
-
-        {/* Instructions */}
         <p className="text-sm text-gray-600 mb-4 line-clamp-6">
           {meal.instructions}
         </p>
-
-        {/* Cuisine and Rating */}
         <div className="flex items-center justify-between text-[12px]">
           <div className="flex items-center gap-2">
             <span className="font-medium">Cuisine:</span>
@@ -56,12 +49,10 @@ function MealCard({ meal, onCardClick, isSelected, isDeletable, onDelete }) {
             </div>
           </div>
         </div>
-
-        {/* Delete Button (if deletable) */}
         {isDeletable && (
           <button
             onClick={(e) => {
-              e.stopPropagation(); // Prevent triggering card click
+              e.stopPropagation(); 
               onDelete();
             }}
             className="mt-4 w-full bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
